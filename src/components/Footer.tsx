@@ -23,11 +23,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-premium-gradient rounded-xl flex items-center justify-center text-white">
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
                 <GraduationCap size={28} />
               </div>
               <span className="text-2xl font-black text-white tracking-tight">
-                JAI <span className="text-primary-light">ACADEMY</span>
+                JAI <span className="text-primary">ACADEMY</span>
               </span>
             </Link>
             <p className="text-lg leading-relaxed">
@@ -47,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-4 text-lg">
               {["Home", "About", "History", "Curriculum", "Tutors", "Pricing"].map((link) => (
                 <li key={link}>
-                  <Link href={`/${link.toLowerCase()}`} className="hover:text-primary transition-colors">
+                  <Link href={`/${link.toLowerCase() === "home" ? "" : link.toLowerCase()}`} className="hover:text-primary transition-colors">
                     {link}
                   </Link>
                 </li>
@@ -56,12 +56,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white text-xl font-bold mb-8">Services</h4>
+            <h4 className="text-white text-xl font-bold mb-8">Curriculum</h4>
             <ul className="space-y-4 text-lg">
-              {["IB / IGCSE Board", "CBSE / ICSE / State", "JEE / NEET Coaching", "Language & IELTS", "Technical Courses"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="hover:text-primary transition-colors">
-                    {link}
+              {[
+                { n: "IB / IGCSE Board", h: "/curriculum/ib-igcse" },
+                { n: "CBSE / ICSE / State", h: "/curriculum/cbse-icse" },
+                { n: "JEE / NEET Coaching", h: "/curriculum/jee-neet" },
+                { n: "Language & IELTS", h: "/curriculum/language-ielts" },
+                { n: "Technical Courses", h: "/curriculum/technical" }
+              ].map((link) => (
+                <li key={link.n}>
+                  <Link href={link.h} className="hover:text-primary transition-colors">
+                    {link.n}
                   </Link>
                 </li>
               ))}
@@ -77,17 +83,17 @@ const Footer = () => {
                 </div>
                 <span>{address}</span>
               </li>
-              <li className="flex items-center gap-4 group">
+              <li className="flex items-center gap-4 group cursor-pointer" onClick={() => window.open(`tel:${phone.replace(/\s+/g, '')}`, '_self')}>
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Phone size={22} />
                 </div>
                 <span>{phone}</span>
               </li>
-              <li className="flex items-center gap-4 group">
+              <li className="flex items-center gap-4 group cursor-pointer" onClick={() => window.open(`mailto:${email}`, '_self')}>
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Mail size={22} />
                 </div>
-                <span>{email}</span>
+                <span className="truncate">{email}</span>
               </li>
             </ul>
           </div>
