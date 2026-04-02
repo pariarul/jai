@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0; /* Black Text */
+  --background-start-rgb: 255, 255, 255; /* White Background */
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 10, 10;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+  scroll-behavior: smooth;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #E5E7EB; /* Gray-200 */
+}
+
+.premium-card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sophisticated subtle shadow */
+}
+
+.gradient-text {
+  color: #2563EB; /* Solid Blue Text */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+input, select, textarea {
+  color: #000000 !important;
+}
