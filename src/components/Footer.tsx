@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import logoImage from "../jai_academy_full_logo.png";
 import {
   Instagram,
   Facebook,
@@ -22,13 +23,8 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-8">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white">
-                <GraduationCap size={28} />
-              </div>
-              <span className="text-2xl font-black text-white tracking-tight">
-                JAI <span className="text-primary">ACADEMY</span>
-              </span>
+            <Link href="/" className="inline-block mb-4">
+              <img src={logoImage.src} alt="Jai Academy Logo" className="h-22 w-auto" />
             </Link>
             <p className="text-lg leading-relaxed">
               Leading individual tutoring agency dedicated to providing certified and expert tutors for board exams & competitive growth.

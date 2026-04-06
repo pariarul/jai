@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import logoImage from "../jai_academy_full_logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, GraduationCap, ChevronDown, Phone, Globe, BookOpen, Rocket, Languages, Monitor, Briefcase, Stethoscope, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -43,16 +44,11 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-[100] border-b border-gray-100 bg-white/80 backdrop-blur-md">
+    <div className="fixed top-0 left-0 w-full z-[100] border-b border-gray-900 bg-black/90 backdrop-blur-md">
       <nav className="container mx-auto h-20 flex items-center justify-between px-4 md:px-10">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-md">
-            <GraduationCap size={24} />
-          </div>
-          <span className="text-2xl font-black text-black">
-            JAI<span className="text-primary">ACADEMY</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <img src={logoImage.src} alt="Jai Academy Logo" className="h-16 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -63,7 +59,7 @@ const Navbar = () => {
                 href={link.href}
                 className={cn(
                   "text-[13px] font-bold uppercase tracking-widest transition-all flex items-center gap-1",
-                  pathname.startsWith(link.href) && link.href !== "/" ? "text-primary" : "text-black hover:text-primary"
+                  pathname.startsWith(link.href) && link.href !== "/" ? "text-primary" : "text-white hover:text-primary"
                 )}
               >
                 {link.name} {link.dropdown && <ChevronDown size={14} className={cn("transition-transform", isCurriculumOpen && "rotate-180")} />}
@@ -76,13 +72,13 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl p-4 mt-2 border border-gray-100"
+                      className="absolute top-full left-0 w-64 bg-black shadow-2xl rounded-2xl p-4 mt-2 border border-gray-900"
                     >
                       {curriculumPaths.map((cp) => (
                         <Link
                           key={cp.name}
                           href={cp.href}
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 text-sm font-bold text-gray-700 hover:text-primary transition-all"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-900 text-sm font-bold text-gray-300 hover:text-primary transition-all"
                         >
                           <span className="text-primary/60">{cp.icon}</span>
                           {cp.name}
@@ -98,7 +94,7 @@ const Navbar = () => {
 
         {/* Action Buttons */}
         <div className="hidden lg:flex items-center gap-6">
-          <a href={`tel:${process.env.NEXT_PUBLIC_SITE_PHONE?.replace(/\s+/g, '')}`} className="text-black font-bold flex items-center gap-2 hover:text-primary transition-colors text-sm">
+          <a href={`tel:${process.env.NEXT_PUBLIC_SITE_PHONE?.replace(/\s+/g, '')}`} className="text-white font-bold flex items-center gap-2 hover:text-primary transition-colors text-sm">
             <Phone size={18} /> {process.env.NEXT_PUBLIC_SITE_PHONE || "+91 98765 43210"}
           </a>
           <Link href="/hire" className="px-8 py-3 bg-primary text-white rounded-lg font-bold shadow-md hover:bg-primary-dark transition-all text-sm uppercase tracking-widest">
@@ -108,7 +104,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden p-3 rounded-lg bg-gray-50 text-black border border-gray-200"
+          className="xl:hidden p-3 rounded-lg bg-gray-900 text-white border border-gray-800"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -125,14 +121,13 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 w-[85%] md:w-[400px] h-screen bg-white z-[120] shadow-2xl p-8 overflow-y-auto"
+              className="fixed top-0 right-0 w-[85%] md:w-[400px] h-screen bg-black text-white z-[120] shadow-2xl p-8 overflow-y-auto"
             >
               <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white"><GraduationCap size={24} /></div>
-                  <span className="text-xl font-bold">Menu</span>
+                <div className="flex items-center">
+                  <img src={logoImage.src} alt="Jai Academy Logo" className="h-10 w-auto" />
                 </div>
-                <button onClick={() => setIsMobileMenuOpen(false)} className="p-3 bg-gray-50 rounded-lg"><X size={24} /></button>
+                <button onClick={() => setIsMobileMenuOpen(false)} className="p-3 bg-gray-900 rounded-lg text-white"><X size={24} /></button>
               </div>
 
               <div className="space-y-4">
@@ -143,7 +138,7 @@ const Navbar = () => {
                       onClick={() => !link.dropdown && setIsMobileMenuOpen(false)}
                       className={cn(
                         "flex items-center justify-between p-4 rounded-xl transition-all font-bold",
-                        pathname === link.href ? "bg-primary/10 text-primary" : "text-black hover:bg-gray-50"
+                        pathname === link.href ? "bg-primary/10 text-primary" : "text-white hover:bg-gray-900"
                       )}
                     >
                       <span className="text-lg uppercase tracking-widest">{link.name}</span>
@@ -155,7 +150,7 @@ const Navbar = () => {
                             key={cp.name}
                             href={cp.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-3 p-3 text-sm font-bold text-gray-500 hover:text-primary transition-all border-l-2 border-gray-100 ml-2"
+                            className="flex items-center gap-3 p-3 text-sm font-bold text-gray-400 hover:text-primary transition-all border-l-2 border-gray-800 ml-2"
                           >
                             {cp.name}
                           </Link>
