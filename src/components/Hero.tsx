@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[100vh] flex items-center overflow-hidden pt-32 pb-20 bg-white">
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20 bg-white">
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -25,16 +25,16 @@ const Hero = () => {
             Leading academic platform for IGCSE, IB, CBSE, ICSE & NIOS boards. Exceptional tutoring tailored to your goals.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <button className="px-10 py-5 bg-primary text-white rounded-lg font-black text-xl shadow-lg hover:bg-primary-dark active:scale-95 transition-all flex items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16 w-full">
+            <button className="w-full sm:w-auto px-10 py-5 bg-primary text-white rounded-lg font-black text-xl shadow-lg hover:bg-primary-dark active:scale-95 transition-all flex items-center justify-center gap-3">
               Get Free Demo <ArrowRight size={24} />
             </button>
-            <Link href="/tutors" className="px-10 py-5 bg-white border-2 border-gray-200 text-black rounded-lg font-black text-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
+            <Link href="/tutors" className="w-full sm:w-auto px-10 py-5 bg-white border-2 border-gray-200 text-black rounded-lg font-black text-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
               <Play size={24} /> Hire a Tutor
             </Link>
           </div>
 
-          <div className="flex items-center gap-12 pt-10 border-t border-gray-100">
+          <div className="flex flex-wrap items-center gap-6 md:gap-12 pt-10 border-t border-gray-100">
             <div className="flex flex-col">
               <span className="text-4xl font-black text-black">10k+</span>
               <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Students</span>

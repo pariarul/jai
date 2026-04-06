@@ -19,19 +19,17 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <StatsSection />
-      
+
       {/* Short Summary Sections on Home page */}
       <AboutSection />
       <CourseSection />
       <TutorListing />
-      
-      {/* Lead Form in middle */}
-      <LeadForm />
-      
+
+
       {/* Proof and Trust */}
       <Features />
       <Testimonials />
-      
+
       {/* Final Conversion Path */}
       <Pricing />
       <ExtraContent />

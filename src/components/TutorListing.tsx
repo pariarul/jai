@@ -33,7 +33,7 @@ const TutorListing = () => {
   return (
     <section id="tutors" className="py-24">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <div className="max-w-2xl">
             <motion.h2
               initial={{ opacity: 0, x: -20 }}

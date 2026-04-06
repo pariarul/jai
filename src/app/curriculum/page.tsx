@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
-import { Globe, BookOpen, Rocket, Languages, Monitor, ArrowRight } from "lucide-react";
+import { Globe, BookOpen, Rocket, Languages, Monitor, ArrowRight, Briefcase, Stethoscope, Bot } from "lucide-react";
 
 const curriculumCategories = [
   { 
@@ -25,11 +25,32 @@ const curriculumCategories = [
     color: "bg-purple-50 text-purple-600"
   },
   { 
+    name: "CA / CMA / CS / ACCA", 
+    href: "/curriculum/professional", 
+    icon: <Briefcase size={40} />, 
+    desc: "Expert foundation coaching for professional accounting & secretarial courses.",
+    color: "bg-orange-50 text-orange-600"
+  },
+  { 
+    name: "BE / BTech / Medical", 
+    href: "/curriculum/engineering-medical", 
+    icon: <Stethoscope size={40} />, 
+    desc: "Advanced tuition for higher degree engineering and medical streams.",
+    color: "bg-cyan-50 text-cyan-600"
+  },
+  { 
     name: "Language & IELTS", 
     href: "/curriculum/language-ielts", 
     icon: <Languages size={40} />, 
     desc: "Fluent communication training, Band 8+ IELTS prep, and foreign languages.",
     color: "bg-pink-50 text-pink-600"
+  },
+  { 
+    name: "STEM & Robotics (1-8)", 
+    href: "/curriculum/robotics-stem", 
+    icon: <Bot size={40} />, 
+    desc: "Interactive hands-on STEM and robotics labs nurturing young innovators.",
+    color: "bg-teal-50 text-teal-600"
   },
   { 
     name: "Technical Courses", 

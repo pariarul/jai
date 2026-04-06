@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, GraduationCap, ChevronDown, Phone, Globe, BookOpen, Rocket, Languages, Monitor } from "lucide-react";
+import { Menu, X, GraduationCap, ChevronDown, Phone, Globe, BookOpen, Rocket, Languages, Monitor, Briefcase, Stethoscope, Bot } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -35,13 +35,16 @@ const Navbar = () => {
     { name: "IB / IGCSE Board", href: "/curriculum/ib-igcse", icon: <Globe size={18} /> },
     { name: "CBSE / ICSE / State", href: "/curriculum/cbse-icse", icon: <BookOpen size={18} /> },
     { name: "JEE / NEET Coaching", href: "/curriculum/jee-neet", icon: <Rocket size={18} /> },
+    { name: "CA / CMA / CS / ACCA", href: "/curriculum/professional", icon: <Briefcase size={18} /> },
+    { name: "BE / BTech / Medical", href: "/curriculum/engineering-medical", icon: <Stethoscope size={18} /> },
     { name: "Language & IELTS", href: "/curriculum/language-ielts", icon: <Languages size={18} /> },
+    { name: "STEM & Robotics (1-8)", href: "/curriculum/robotics-stem", icon: <Bot size={18} /> },
     { name: "Technical Courses", href: "/curriculum/technical", icon: <Monitor size={18} /> },
   ];
 
   return (
     <div className="fixed top-0 left-0 w-full z-[100] border-b border-gray-100 bg-white/80 backdrop-blur-md">
-      <nav className="container mx-auto h-20 flex items-center justify-between px-10">
+      <nav className="container mx-auto h-20 flex items-center justify-between px-4 md:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-md">

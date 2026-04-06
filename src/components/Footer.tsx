@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import { 
-  Instagram, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  GraduationCap, 
+import {
+  Instagram,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  GraduationCap,
   Youtube
 } from "lucide-react";
 
@@ -34,7 +34,7 @@ const Footer = () => {
               Leading individual tutoring agency dedicated to providing certified and expert tutors for board exams & competitive growth.
             </p>
             <div className="flex gap-4">
-              {[ Facebook, Instagram, Twitter, Linkedin, Youtube ].map((Icon, i) => (
+              {[Facebook, Instagram, Twitter, Linkedin, Youtube].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1">
                   <Icon size={20} />
                 </a>
@@ -62,6 +62,9 @@ const Footer = () => {
                 { n: "IB / IGCSE Board", h: "/curriculum/ib-igcse" },
                 { n: "CBSE / ICSE / State", h: "/curriculum/cbse-icse" },
                 { n: "JEE / NEET Coaching", h: "/curriculum/jee-neet" },
+                { n: "CA / CMA / CS / ACCA", h: "/curriculum/professional" },
+                { n: "BE / BTech / Medical", h: "/curriculum/engineering-medical" },
+                { n: "STEM & Robotics (1-8)", h: "/curriculum/robotics-stem" },
                 { n: "Language & IELTS", h: "/curriculum/language-ielts" },
                 { n: "Technical Courses", h: "/curriculum/technical" }
               ].map((link) => (
@@ -99,9 +102,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+        <div className="pt-8 border-t border-white/5 flex flex-col items-center justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-center">
           <p>© {new Date().getFullYear()} Jai Education Academy. Crafted with Excellence.</p>
-          <div className="flex gap-10">
+
+          <div className="flex gap-10 justify-center">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
             <Link href="/legal" className="hover:text-white transition-colors">Legal</Link>
